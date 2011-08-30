@@ -14,5 +14,5 @@ public:
     vector(int len, double initial_value);
     ~vector();
     
-    double operator[] (const int index);
+    double& operator[] (const int index);
 };
