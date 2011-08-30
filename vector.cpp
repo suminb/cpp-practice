@@ -1,4 +1,4 @@
-#include "smartpointer.h"
+#include "vector.h"
 
 vector::vector(int len, double initial_value) {
     // TODO: Need to make sure len is non-negative nor too big.
