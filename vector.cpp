@@ -1,4 +1,4 @@
-#include "vector.h"
+     #include "vector.h"
 
 vector::vector(int len, double initial_value) {
     // TODO: Need to make sure len is non-negative nor too big.
@@ -20,23 +20,3 @@ double& vector::operator[] (const int index) {
     return this->values[index];
 }
 
-int main() {
-/*
-    auto_ptr<vector> p(new vector);
-    
-    *p = 134;
-    
-    //cout << p << endl;
-    cout << *p << endl;
-*/
-
-    vector v(10, 0);
-    
-    v[0] = 12.34567;
-    v[2] = -15835;
-    
-    for(int i=0; i<10; i++)
-        cout << v[i] << endl;
-
-    return 0;
-}
