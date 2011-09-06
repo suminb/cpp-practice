@@ -1,0 +1,1 @@
+In order to generate Makefile and other build scripts, run `../../Make/scripts/kjb_add_makefiles`.
