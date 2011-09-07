@@ -2,15 +2,6 @@
 #include "vector.h"
 
 int main() {
-    //kjb_init();
-/*
-    auto_ptr<vector> p(new vector);
-    
-    *p = 134;
-    
-    //cout << p << endl;
-    cout << *p << endl;
-*/
 
     vector v(10, 0);
     

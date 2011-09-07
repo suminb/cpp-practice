@@ -16,5 +16,8 @@ public:
     vector(int len, double initial_value);
     ~vector();
     
+    //static vector copy(vector* v);
+    
     double& operator[] (const int index);
+    //vector& operator+ (const vector v);
 };

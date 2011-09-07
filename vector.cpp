@@ -19,4 +19,11 @@ vector::~vector() {
 double& vector::operator[] (const int index) {
     return this->values[index];
 }
-
+/*
+vector& vector::operator+ (const vector v) {
+    // TODO: To check whether the vector lengths are equal
+    
+    //vector v = vector::copy(this);
+    
+}
+*/
