@@ -17,5 +17,8 @@ int main() {
     
     //int_vector u = v + w;
     
+    cout << v << endl;
+    cout << w << endl;
+    
     return 0;
 }
