@@ -2,11 +2,15 @@
 #include <sstream>
 
 int_vector::int_vector(int length) {
-    kjb_c::get_zero_int_vector(&this->impl, length);
+    this->retain_count = 1;
+    kjb_c::ra_get_target_int_vector(&this->impl, length);
 }
 
 int_vector::~int_vector() {
-    kjb_c::free_int_vector(this->impl);
+    this->retain_count -= 1;
+    
+    if(this->retain_count <= 0)
+        kjb_c::free_int_vector(this->impl);
 }
 
 int int_vector::length() {
@@ -32,8 +36,11 @@ int& int_vector::operator[] (const int index) {
 int_vector int_vector::operator+ (const int_vector v) {
     int_vector t = int_vector(this->length());
     
-    kjb_c::add_int_vectors(&t.impl, this->impl, v.impl);
+    cout << "t = " << t << endl;
     
+    //kjb_c::add_int_vectors(&t.impl, this->impl, v.impl);
+    
+    t.retain();
     return t;
 }
 
@@ -46,4 +53,17 @@ ostream& operator<< (ostream &out, int_vector &v) {
     }
     
     return out;
+}
+
+
+int_vector* int_vector::retain() {
+    this->retain_count += 1;
+    
+    return this;
+}
+
+int_vector* int_vector::release() {
+    this->retain_count -= 1;
+    
+    return this;
 }
