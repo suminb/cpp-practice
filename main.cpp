@@ -1,15 +1,21 @@
 //#include "m/m_incl.h"
-#include "vector.h"
+#include "int_vector.h"
+#include <iostream>
+
+using namespace std;
 
 int main() {
-
-    vector v(10, 0);
+    int_vector v(3);
+    v[0] = 1;
+    v[1] = 2;
+    v[2] = 3;
     
-    v[0] = 12.34567;
-    v[2] = -15835;
+    int_vector w(3);
+    w[0] = 4;
+    w[1] = 6;
+    w[2] = 8;
     
-    for(int i=0; i<10; i++)
-        cout << v[i] << endl;
-
+    //int_vector u = v + w;
+    
     return 0;
 }
