@@ -15,10 +15,15 @@ int main() {
     w[1] = 6;
     w[2] = 8;
     
-    //int_vector u = v + w;
+    int_vector u = v + w;
+    cout << u << endl;
     
-    cout << v << endl;
-    cout << w << endl;
+    int_vector z = int_vector(w);
+    cout << z << endl;
+    
+    //cout << v << endl;
+    //cout << w << endl;
+
     
     return 0;
 }

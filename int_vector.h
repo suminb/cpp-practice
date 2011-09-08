@@ -1,3 +1,6 @@
+#ifndef INT_VECTOR_H
+#define INT_VECTOR_H
+
 #include "l/l_incl.h" 
 #include <iostream>
 #include <string>
@@ -15,13 +18,18 @@ class int_vector {
         
     public:
         int_vector(int length);
+        int_vector(const int_vector& v);
         ~int_vector();
         
-        int length();
+        int length() {
+            return this->impl->length;
+        }
         string str();
         
         int& operator[] (const int index);
-        int_vector operator+ (const int_vector);
+        
+        int_vector& operator+= (const int_vector&);
+
         int_vector operator- (const int_vector);
         int_vector operator* (const int_vector); // dot product?
         
@@ -32,3 +40,7 @@ class int_vector {
         int_vector* retain();
         int_vector* release();
 };
+
+int_vector operator+ (const int_vector& v1, const int_vector& v2);
+
+#endif // INT_VECTOR_H
